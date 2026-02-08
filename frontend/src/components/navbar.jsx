@@ -1,57 +1,43 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import Dropdown from './dropdown';
-import logo from '../assets/logo.PNG';
+import icon from '../assets/icon.JPG';
 
 const Navbar = () => {
   const navigate = useNavigate();
   
   return (
-    <nav className="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-600 via-purple-600 to-purple-700 px-8 py-2 z-50">
-      <div className="flex items-center justify-between">
+    <nav className="fixed top-0 left-0 w-full bg-[#050814] text-white px-6 py-4 z-50 border-b border-white/10">
+      <div className="flex items-center justify-between max-w-7xl mx-auto">
 
         {/* Left Section */}
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-8">
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}>
             <img
-              src={logo}
-              alt="Stitchy Logo"
-              className="h-20 w-auto object-contain"
+              src={icon}
+              alt="Stitchy Icon"
+              className="h-8 w-8 object-contain rounded"
             />
+            <span className="text-xl font-semibold">Stitchy</span>
           </div>
 
-          <div className="flex gap-8 text-white font-medium">
-
-            {/* Dropdown */}
-            <Dropdown title="Women" />
-            <Dropdown title="Kids" />
-            <Dropdown title="Men" />
-
-            <span className="cursor-pointer hover:opacity-80">
-              Occasion
-            </span>
+          <div className="flex gap-6 text-sm">
+            <button className="hover:text-gray-300 transition">Stitch</button>
+            <button className="hover:text-gray-300 transition">Design</button>
+            <button className="hover:text-gray-300 transition">Business</button>
+            <button className="hover:text-gray-300 transition flex items-center gap-1">
+              About
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
           </div>
         </div>
 
         {/* Right Section */}
-        <div className="flex items-center gap-6">
-          <div className="relative max-w-md">
-            <input 
-              type="text" 
-              placeholder="Search for products..."
-              className="w-full px-4 py-2 pl-10 rounded-full bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
-            />
-            <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">🔍</span>
-            <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">🎤</button>
-          </div>
-          <div className="flex items-center text-white text-sm">
-            <span className="mr-1">📍</span>
-            Home - New Delhi, Delhi
-          </div>
-          <button className="text-white hover:opacity-80">🔔</button>
-          <button className="text-white hover:opacity-80">🛍️</button>
-          <button className="bg-white text-purple-600 px-4 py-2 rounded-full font-medium hover:bg-gray-100 hover:scale-105 hover:shadow-lg transition-all duration-200" onClick={() => navigate('/login')}>
-            Log In
+        <div className="flex items-center gap-4">
+          <button className="hover:text-gray-300 transition text-sm">Help</button>
+          <button className="bg-fuchsia-600 hover:bg-fuchsia-500 text-white px-6 py-2 rounded-full font-medium transition text-sm" onClick={() => navigate('/login')}>
+            Log in
           </button>
         </div>
 
@@ -61,5 +47,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
-// this is the navbar of the website 

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Lock, User, Mail } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import logo from '../assets/logo.PNG';
+import icon from '../assets/icon.JPG';
 
 export default function AuthPage() {
   const [activeTab, setActiveTab] = useState("login");
@@ -22,9 +23,9 @@ export default function AuthPage() {
         {/* Header */}
         <div className="text-center mb-4">
           <img 
-            src={logo} 
-            alt="Stitchy Logo" 
-            className="w-16 h-16 mx-auto mb-2 cursor-pointer" 
+            src={icon} 
+            alt="Stitchy Icon" 
+            className="w-16 h-16 mx-auto mb-2 cursor-pointer rounded-lg" 
             onClick={() => navigate('/')}
           />
           <h1 className="text-2xl font-bold tracking-wide text-fuchsia-400">
