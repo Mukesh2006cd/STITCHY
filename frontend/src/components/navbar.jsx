@@ -1,15 +1,18 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import Dropdown from './dropdown';
 import logo from '../assets/logo.PNG';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  
   return (
     <nav className="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-600 via-purple-600 to-purple-700 px-8 py-2 z-50">
       <div className="flex items-center justify-between">
 
         {/* Left Section */}
         <div className="flex items-center gap-10">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}>
             <img
               src={logo}
               alt="Stitchy Logo"
@@ -47,6 +50,9 @@ const Navbar = () => {
           </div>
           <button className="text-white hover:opacity-80">🔔</button>
           <button className="text-white hover:opacity-80">🛍️</button>
+          <button className="bg-white text-purple-600 px-4 py-2 rounded-full font-medium hover:bg-gray-100 hover:scale-105 hover:shadow-lg transition-all duration-200" onClick={() => navigate('/login')}>
+            Log In
+          </button>
         </div>
 
       </div>
@@ -56,3 +62,4 @@ const Navbar = () => {
 
 export default Navbar
 
+// this is the navbar of the website 
