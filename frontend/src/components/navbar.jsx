@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import icon from '../assets/applogo.jpg';
+import icon from '../assets/applogo.JPG';
 
 const Navbar = () => {
   const navigate = useNavigate();
