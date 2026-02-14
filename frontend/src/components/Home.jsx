@@ -19,10 +19,10 @@ const Home = () => {
         transition={{ delay: 0.6, duration: 0.5 }}
         className="relative z-10 bg-[#0c1025]/80 backdrop-blur-xl border-b border-white/10"
       >
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold">Stitch</h1>
-            <div className="flex gap-8 text-sm text-gray-400">
+            <h1 className="text-2xl sm:text-3xl font-bold">Stitch</h1>
+            <div className="hidden md:flex gap-8 text-sm text-gray-400">
               <button className="hover:text-white transition">Request a stitch</button>
               <button className="hover:text-white transition">Reserve a tailor</button>
               <button className="hover:text-white transition">See prices</button>
@@ -34,8 +34,8 @@ const Home = () => {
       </motion.div>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Section */}
           <motion.div
             initial={{ x: -50, opacity: 0 }}
@@ -59,7 +59,7 @@ const Home = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.2, duration: 0.6 }}
-              className="text-5xl font-bold mb-8 leading-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 leading-tight"
             >
               Request a stitch for<br />now or later
             </motion.h2>
@@ -140,7 +140,7 @@ const Home = () => {
             <img 
               src={heroImage} 
               alt="Stitchy Service" 
-              className="w-full h-[600px] object-cover rounded-3xl shadow-2xl"
+              className="w-full h-[300px] sm:h-[400px] lg:h-[600px] object-cover rounded-3xl shadow-2xl"
             />
           </motion.div>
         </div>
@@ -153,8 +153,8 @@ const Home = () => {
         transition={{ delay: 1.8, duration: 0.8 }}
         className="relative z-10 bg-black border-t border-white/10 mt-20"
       >
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="grid grid-cols-4 gap-12 mb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
             {/* Company */}
             <div>
               <h3 className="text-lg font-semibold mb-4">Company</h3>
@@ -203,7 +203,7 @@ const Home = () => {
           </div>
 
           {/* Social Links & Language */}
-          <div className="flex items-center justify-between py-6 border-t border-white/10">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0 py-6 border-t border-white/10">
             <div className="flex items-center gap-4">
               <button className="hover:text-gray-400 transition">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -227,7 +227,7 @@ const Home = () => {
               </button>
             </div>
 
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6">
               <button className="flex items-center gap-2 text-sm hover:text-gray-400 transition">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -244,7 +244,7 @@ const Home = () => {
           </div>
 
           {/* App Store Links */}
-          <div className="flex items-center gap-4 py-6">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 py-6">
             <button className="border border-white/20 rounded-lg px-4 py-2 hover:bg-white/5 transition">
               <div className="flex items-center gap-2">
                 <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -270,9 +270,9 @@ const Home = () => {
           </div>
 
           {/* Bottom Links */}
-          <div className="flex items-center justify-between pt-6 border-t border-white/10 text-sm text-gray-400">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0 pt-6 border-t border-white/10 text-sm text-gray-400">
             <div>© 2024 Stitchy Technologies Inc</div>
-            <div className="flex gap-6">
+            <div className="flex gap-4 sm:gap-6">
               <button className="hover:text-white transition">Privacy</button>
               <button className="hover:text-white transition">Accessibility</button>
               <button className="hover:text-white transition">Terms</button>
