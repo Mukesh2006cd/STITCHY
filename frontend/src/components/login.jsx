@@ -2,8 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Lock, User, Mail } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import logo from '../assets/logo.PNG';
-import icon from '../assets/icon.JPG';
+import applogo from '../assets/applogo.JPG';
 
 export default function AuthPage() {
   const [activeTab, setActiveTab] = useState("login");
@@ -12,18 +11,43 @@ export default function AuthPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#050814] text-white relative overflow-hidden">
       {/* Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:70px_70px]" />
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:70px_70px]" 
+      />
 
       {/* Glow */}
-      <div className="absolute w-[500px] h-[500px] bg-fuchsia-600/20 blur-[150px] rounded-full top-10 left-20"></div>
-      <div className="absolute w-[500px] h-[500px] bg-purple-500/10 blur-[150px] rounded-full bottom-10 right-20"></div>
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.2, duration: 1 }}
+        className="absolute w-[500px] h-[500px] bg-fuchsia-600/20 blur-[150px] rounded-full top-10 left-20"
+      />
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.4, duration: 1 }}
+        className="absolute w-[500px] h-[500px] bg-purple-500/10 blur-[150px] rounded-full bottom-10 right-20"
+      />
 
       {/* Main Card */}
-      <div className="relative z-10 w-full max-w-md px-6 py-4">
+      <motion.div 
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.6, duration: 0.6 }}
+        className="relative z-10 w-full max-w-md px-6 py-4"
+      >
         {/* Header */}
-        <div className="text-center mb-4">
+        <motion.div 
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+          className="text-center mb-4"
+        >
           <img 
-            src={icon} 
+            src={applogo} 
             alt="Stitchy Icon" 
             className="w-16 h-16 mx-auto mb-2 cursor-pointer rounded-lg" 
             onClick={() => navigate('/')}
@@ -34,10 +58,15 @@ export default function AuthPage() {
           <p className="text-gray-400 text-sm mt-1">
             Get your clothes stitched in a click
           </p>
-        </div>
+        </motion.div>
 
         {/* Auth Box */}
-        <div className="bg-[#0c1025]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl p-5">
+        <motion.div 
+          initial={{ scale: 0.95, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="bg-[#0c1025]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl p-5"
+        >
           {/* Tabs */}
           <div className="flex bg-black/30 rounded-xl p-1 mb-5">
             <button
@@ -178,8 +207,8 @@ export default function AuthPage() {
               </motion.div>
             )}
           </AnimatePresence>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

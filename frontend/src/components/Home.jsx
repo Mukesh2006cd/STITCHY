@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import heroImage from '../assets/this.jpg';
 
 const Home = () => {
@@ -12,7 +13,12 @@ const Home = () => {
       <div className="absolute w-[500px] h-[500px] bg-purple-500/10 blur-[150px] rounded-full bottom-10 right-20"></div>
 
       {/* Secondary Navigation */}
-      <div className="relative z-10 bg-[#0c1025]/80 backdrop-blur-xl border-b border-white/10">
+      <motion.div 
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.6, duration: 0.5 }}
+        className="relative z-10 bg-[#0c1025]/80 backdrop-blur-xl border-b border-white/10"
+      >
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-3xl font-bold">Stitch</h1>
@@ -25,26 +31,45 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-2 gap-12 items-center">
           {/* Left Section */}
-          <div>
-            <div className="flex items-center gap-2 text-sm mb-6">
+          <motion.div
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+          >
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 0.5 }}
+              className="flex items-center gap-2 text-sm mb-6"
+            >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
               </svg>
               <span className="font-medium">Delhi NCR, IN</span>
               <button className="underline ml-2 text-fuchsia-400 hover:text-fuchsia-300">Change city</button>
-            </div>
+            </motion.div>
 
-            <h2 className="text-5xl font-bold mb-8 leading-tight">
+            <motion.h2 
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="text-5xl font-bold mb-8 leading-tight"
+            >
               Request a stitch for<br />now or later
-            </h2>
+            </motion.h2>
 
-            <div className="flex items-start gap-2 mb-8">
+            <motion.div 
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 1.4, duration: 0.6 }}
+              className="flex items-start gap-2 mb-8"
+            >
               <svg className="w-5 h-5 text-fuchsia-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
@@ -52,10 +77,15 @@ const Home = () => {
                 <p className="font-medium">Up to 50% off your first 5 Stitchy orders. T&Cs apply.*</p>
                 <p className="text-sm text-gray-400">*Valid within 15 days of signup.</p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Booking Form */}
-            <div className="bg-[#0c1025]/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 space-y-4">
+            <motion.div 
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 1.6, duration: 0.6 }}
+              className="bg-[#0c1025]/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 space-y-4"
+            >
               <div className="flex items-center gap-3">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
@@ -98,22 +128,31 @@ const Home = () => {
               <button className="w-full bg-fuchsia-600 hover:bg-fuchsia-500 text-white py-4 rounded-lg font-medium transition">
                 See prices
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Section - Image */}
-          <div>
+          <motion.div
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+          >
             <img 
               src={heroImage} 
               alt="Stitchy Service" 
               className="w-full h-[600px] object-cover rounded-3xl shadow-2xl"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Footer/About Section */}
-      <footer className="relative z-10 bg-black border-t border-white/10 mt-20">
+      <motion.footer 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.8, duration: 0.8 }}
+        className="relative z-10 bg-black border-t border-white/10 mt-20"
+      >
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid grid-cols-4 gap-12 mb-12">
             {/* Company */}
@@ -240,7 +279,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </footer>
+      </motion.footer>
+
     </div>
   );
 };
