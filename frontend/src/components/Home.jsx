@@ -22,6 +22,18 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl sm:text-3xl font-bold">Stitch</h1>
+            
+            {/* Mobile: Show only key actions */}
+            <div className="md:hidden flex gap-2">
+              <button className="bg-fuchsia-600/20 text-fuchsia-400 px-3 py-2 rounded-lg text-xs font-medium hover:bg-fuchsia-600/30 transition">
+                Request
+              </button>
+              <button className="bg-purple-600/20 text-purple-400 px-3 py-2 rounded-lg text-xs font-medium hover:bg-purple-600/30 transition">
+                Prices
+              </button>
+            </div>
+            
+            {/* Desktop: Show all options */}
             <div className="hidden md:flex gap-8 text-sm text-gray-400">
               <button className="hover:text-white transition">Request a stitch</button>
               <button className="hover:text-white transition">Reserve a tailor</button>
